@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, memo } from "react";
-import styles from "./MyMapComponent.css";
+import styles from "./MarkerMapComponent.css";
 
 function getLocations() {
   const locationsList = [
@@ -46,7 +46,7 @@ function getMap(ref) {
   });
 }
 
-export const MyMapComponent = memo(function MyMapComponent() {
+export const MarkerMapComponent = memo(function MarkerMapComponent() {
   const ref = useRef();
   const map = useRef();
   const markers = useRef([]);

@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import { useEffect, useState } from "react";
 import { Wrapper, Status } from "@googlemaps/react-wrapper";
-import { MyMapComponent } from "./MyMapComponent";
+import { MarkerMapComponent } from "./MarkerMapComponent";
 
 const render = (status) => {
   if (status === Status.LOADING) return <h3>{status} ..</h3>;
@@ -42,8 +42,10 @@ export default function Home() {
         <input type="checkbox" checked={locationSharingEnabled} onChange={() => enableLocationSharing(!locationSharingEnabled)} />
         Share Location
       </label>
+      <br />
+      <label>enter name: <input type="text" /></label>
       <Wrapper apiKey={process.env.NEXT_PUBLIC_API_KEY} render={render}>
-        <MyMapComponent />
+        <MarkerMapComponent />
       </Wrapper>
     </div>
   );
