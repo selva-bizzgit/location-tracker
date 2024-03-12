@@ -5,6 +5,7 @@ import styles from "./page.module.css";
 import { useEffect, useState } from "react";
 import { Wrapper, Status } from "@googlemaps/react-wrapper";
 import { MarkerMapComponent } from "./MarkerMapComponent";
+import { LinerMapComponent } from "./LinerMapComponent";
 
 const render = (status) => {
   if (status === Status.LOADING) return <h3>{status} ..</h3>;
@@ -45,7 +46,7 @@ export default function Home() {
       <br />
       <label>enter name: <input type="text" /></label>
       <Wrapper apiKey={process.env.NEXT_PUBLIC_API_KEY} render={render}>
-        <MarkerMapComponent />
+        <LinerMapComponent />
       </Wrapper>
     </div>
   );
